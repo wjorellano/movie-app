@@ -32,7 +32,7 @@ const MovieDetails = (props) => {
 
   const getGenre = () => {
     return details.genres.map(genre => (
-      <View style={Styles.genreContainer}>
+      <View key={genre.id} style={Styles.genreContainer}>
         <Text style={Styles.genre}>{genre.name}</Text>
       </View>
     ));

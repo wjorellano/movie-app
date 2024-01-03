@@ -5,8 +5,7 @@ import { View,
          FlatList,
          Text,
          TouchableOpacity } from 'react-native';
-import {POSTER_IMAGE} from '../config';
-import {BASE_URL, API_KEY } from '../config';
+import {POSTER_IMAGE, BASE_URL, API_KEY} from '../config';
 import Styles from '../Styles';
 
 const SearchMovie = (props) => {
@@ -33,7 +32,7 @@ const SearchMovie = (props) => {
   }, [searchQuery]);
 
   const renderMovieItem = ({ item }) => (
-   <View style={Styles.searchContainer}>
+   <View key={item.id } style={Styles.searchContainer}>
       <TouchableOpacity
          onPress={() => {
          props.navigation.push('movieDetails', {movieId: item.id});
